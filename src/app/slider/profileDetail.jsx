@@ -50,7 +50,7 @@ export default function ProfileDetail() {
               Create an account ✏️
             </div>
             <div className="text-sm py-2 text-[#212121] text-center">
-              Please complete your profile. Don't worry, your data will remain
+              Please complete your profile. Do not worry, your data will remain
               private and only you can see it.
             </div>
           </div>

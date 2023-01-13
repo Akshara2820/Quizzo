@@ -46,7 +46,7 @@ export default function WorkPlace() {
         Describe a workplace that suits you 💼
       </div>
       <div className="text-sm py-2 text-[#212121] text-center">
-        You can skip it if you're not sure.
+        You can skip it, if your not sure.
       </div>
       <div>
         {Typedata.map((i) => {

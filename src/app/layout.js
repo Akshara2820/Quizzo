@@ -6,7 +6,7 @@ function Layout({ children }) {
   return (
     <html>
       <head>
-        <title>next13</title>
+        <title>Quizzo</title>
         <link href="../styles/globals.css"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com/%22/%3E"/>
         <link rel="preconnect" href="https://fonts.gstatic.com/" />
