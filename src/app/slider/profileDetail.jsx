@@ -128,7 +128,7 @@ const LoginPage1 = styled.div`
     accent-color: var(--blueColor);
   }
   input[type="date"]::-webkit-calendar-picker-indicator{
-    /* background: var(--blueColor); */
+    /* background-color: var(--blueColor); */
     /* accent-color: var(--blueColor); */
     
   }
