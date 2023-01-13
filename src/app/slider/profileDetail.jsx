@@ -101,6 +101,7 @@ export default function ProfileDetail() {
             <input className="checkbox" type="checkbox" />
             <p>Remember me</p>
           </div>
+          
           <hr className="mt-6" />
 
           <div className="sign-up" onClick={() => setProgress("100%")}>

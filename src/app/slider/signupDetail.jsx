@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { FaUser } from "react-icons/fa";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
+import {FcGoogle} from 'react-icons/fc'
+import {BsGithub} from 'react-icons/bs'
 
 export default function SignupDetail() {
   const { setProgress } = useProgress();
@@ -74,6 +76,22 @@ export default function SignupDetail() {
             <input className="checkbox" type="checkbox" />
             <p>Remember me</p>
           </div>
+
+          <div className="flex items-center gap-2 mx-4">
+            <div className="my-6 h-[1px] bg-[#efefef] w-full"></div>
+            <div className="font-bold"> or</div>
+            <div className="my-6 h-[1px] bg-[#efefef] w-full"></div>
+          </div>
+          <div className="googleButton">
+            <FcGoogle className="text-2xl" />
+            <button>Continue with Google</button>
+          </div>
+          <div className="googleButton">
+            <BsGithub className="text-2xl" />
+            <button>Continue with Google</button>
+          </div>
+
+
           <hr className="mt-6" />
           <Link href="./login/forgot">
             <div className="font-bold text-[14px] text-center mt-6 text-[#795cff]">
@@ -116,6 +134,18 @@ export default function SignupDetail() {
   );
 }
 const LoginPage1 = styled.div`
+.googleButton {
+    box-shadow: #efefef 0px 5px 1px;
+    margin: 30px 20px 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #efefef;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+  }
 
 .circle {
     background-color: var(--blueColor);
