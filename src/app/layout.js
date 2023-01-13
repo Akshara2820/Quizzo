@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import Header from "./header";
-
 import "../../styles/globals.css";
+import ContextData from "../context/context";
+
 function Layout({ children }) {
   return (
     <html>
@@ -11,13 +10,13 @@ function Layout({ children }) {
         <link href="../styles/globals.css"></link>
       </head>
       <body>
-        {/* <Header /> */}
-        {children}
+        <ContextData>
+          {/*<Header /> */} 
+          {children}
+        </ContextData>
       </body>
     </html>
   );
 }
 
 export default Layout;
-
-
