@@ -66,7 +66,6 @@ function ForgotPage() {
               onChange={handlePasswordChange}
               value={passwordInput}
               name="password"
-              class="form-control"
               placeholder="Password"
             />
             <div className="eyeIcon" onClick={togglePassword}>
@@ -86,7 +85,6 @@ function ForgotPage() {
               onChange={handleCPasswordChange}
               value={cpasswordInput}
               name="password"
-              class="form-control"
               placeholder="Password"
             />
             <div className="eyeIcon" onClick={toggleCPassword}>
@@ -132,9 +130,11 @@ function ForgotPage() {
                 <p className="text-[14px] text-center mt-2">
                   You have successfully reset and created a new password.
                 </p>
+                <Link href='/'>
                 <div className="sign-up">
                   <button>Go to Home</button>
                 </div>
+                </Link>
               </div>
             </div>
           </>

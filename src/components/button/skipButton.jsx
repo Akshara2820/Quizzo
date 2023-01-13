@@ -13,7 +13,7 @@ export default function SkipButton() {
 const Root = styled.div`
 /* margin: 30px 0px 0px 50px; */
   .skipButton {
-    background-color: var(--lightPurple);
+    background-color:#f0edff;
     box-shadow: #c4b7ff 0px 5px 0px;
     margin: 25px 20px;
     border-radius: 50px;

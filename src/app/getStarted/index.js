@@ -68,7 +68,6 @@ const Root = styled.div`
     .text-title {
       font-size: 30px;
       line-height: 36px;
-      width: 350px;
       margin: auto;
     }
   }

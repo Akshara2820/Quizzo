@@ -1,26 +1,29 @@
 "use client";
-
+import { useProgress } from "../../context/context";
+import Header from "../header";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Link from "next/link";
 
-export default function LoginPage() {
-  const [passwordType, setPasswordType] = useState("password");
+export default function ProfileDetail() {
+  const { setProgress } = useProgress();
+  const [DOB, setDOB] = useState("dob");
   const [passwordInput, setPasswordInput] = useState("");
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState(null);
 
   const handlePasswordChange = (evnt) => {
     setPasswordInput(evnt.target.value);
   };
   const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
+    if (DOB === "dob") {
+      setDOB("text");
       return;
     }
-    setPasswordType("password");
+    setDOB("dob");
   };
 
   function isValidEmail(email) {
@@ -34,49 +37,64 @@ export default function LoginPage() {
       setError(null);
     }
 
-    setMessage(event.target.value);
+    setName(event.target.value);
   };
 
   return (
     <>
+      <Header />
       <LoginPage1>
         <div>
-         <Link href='/'> <HiOutlineArrowLeft className="text-[20px]" /></Link>
           <div>
-            <h3 className="mt-6 text-[24px] font-semibold">Hello there 👋</h3>
+            <div className="m-4 text-2xl text-center font-bold">
+              Create an account ✏️
+            </div>
+            <div className="text-sm py-2 text-[#212121] text-center">
+              Please complete your profile. Don't worry, your data will remain
+              private and only you can see it.
+            </div>
           </div>
-
           <div className="mt-10">
-            <p>Email</p>
+            <p>Full Name</p>
             <input
               className="input"
               id="message"
               name="message"
-              value={message}
+              value={name}
               onChange={handleChange}
               type="text"
-              placeholder="enter your email address"
+              placeholder="Enter Your Name"
             />
-            {error && <h2 style={{ color: "red" }}>{error}</h2>}
           </div>
-
-          <div className="mt-6">
-            <p>Password</p>
+          <div className="mt-10">
+            <p>Date of Birth</p>
             <input
               className="input"
-              type={passwordType}
-              onChange={handlePasswordChange}
-              value={passwordInput}
-              name="password"
-              placeholder="Password"
+              id="message"
+              name="message"
+              type="date"
+              placeholder="Enter Your DOB"
             />
-            <div className="eyeIcon" onClick={togglePassword}>
-              {passwordType === "password" ? (
-                <AiFillEyeInvisible />
-              ) : (
-                <AiFillEye />
-              )}
-            </div>
+          </div>
+          <div className="mt-10">
+            <p>Phone Number</p>
+            <input
+              className="input"
+              id="message"
+              name="message"
+              type="text"
+              placeholder="Enter Your Phone No."
+            />
+          </div>
+          <div className="mt-10">
+            <p>Country</p>
+            <input
+              className="input"
+              id="message"
+              name="message"
+              type="text"
+              placeholder="Enter Your Country"
+            />
           </div>
 
           <div className="flex gap-2 items-center mt-4">
@@ -84,12 +102,8 @@ export default function LoginPage() {
             <p>Remember me</p>
           </div>
           <hr className="mt-6" />
-          <Link href="./login/forgot">
-            <div className="font-bold text-[14px] text-center mt-6 text-[#795cff]">
-              Forgot Password?
-            </div>
-          </Link>
-          <div className="sign-up">
+
+          <div className="sign-up" onClick={() => setProgress("100%")}>
             <button>Sign In</button>
           </div>
         </div>
@@ -113,6 +127,12 @@ const LoginPage1 = styled.div`
   input[type="checkbox"] {
     accent-color: var(--blueColor);
   }
+  input[type="date"]::-webkit-calendar-picker-indicator{
+    /* background: var(--blueColor); */
+    /* accent-color: var(--blueColor); */
+    
+  }
+
   .input {
     border: 2px solid var(--blueColor);
     padding: 10px;
