@@ -180,9 +180,10 @@ const LoginPage1 = styled.div`
     }
   }
   .sign-up {
+  
     background-color: var(--blueColor);
     box-shadow: #543acc 0px 5px 0px;
-    margin: 55px 20px;
+    margin: 20px 20px;
     border-radius: 50px;
     padding: 10px;
     color: var(--whiteColor);
