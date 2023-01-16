@@ -55,9 +55,9 @@ export default function ProfileDetail() {
             </div>
           </div>
           <div className="mt-10">
-            <p>Full Name</p>
+            <p className="font-bold">Full Name</p>
             <input
-              className="input"
+              className="input font-bold"
               id="message"
               name="message"
               value={name}
@@ -66,7 +66,7 @@ export default function ProfileDetail() {
               placeholder="Enter Your Name"
             />
           </div>
-          <div className="mt-10">
+          <div className="mt-10 font-bold">
             <p>Date of Birth</p>
             <input
               className="input"
@@ -76,7 +76,7 @@ export default function ProfileDetail() {
               placeholder="Enter Your DOB"
             />
           </div>
-          <div className="mt-10">
+          <div className="mt-10 font-bold">
             <p>Phone Number</p>
             <input
               className="input"
@@ -86,7 +86,7 @@ export default function ProfileDetail() {
               placeholder="Enter Your Phone No."
             />
           </div>
-          <div className="mt-10">
+          <div className="mt-10 font-bold">
             <p>Country</p>
             <input
               className="input"
@@ -97,7 +97,7 @@ export default function ProfileDetail() {
             />
           </div>
 
-          <div className="flex gap-2 items-center mt-4">
+          <div className="flex gap-2 items-center mt-4 font-bold">
             <input className="checkbox" type="checkbox" />
             <p>Remember me</p>
           </div>

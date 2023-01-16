@@ -41,7 +41,10 @@ export default function LoginPage() {
     <>
       <LoginPage1>
         <div>
-         <Link href='/'> <HiOutlineArrowLeft className="text-[20px]" /></Link>
+          <Link href="/">
+            {" "}
+            <HiOutlineArrowLeft className="text-[20px]" />
+          </Link>
           <div>
             <h3 className="mt-6 text-[24px] font-semibold">Hello there 👋</h3>
           </div>
@@ -89,9 +92,11 @@ export default function LoginPage() {
               Forgot Password?
             </div>
           </Link>
-          <div className="sign-up">
-            <button>Sign In</button>
-          </div>
+          <Link href="/find-friend">
+            <div className="sign-up">
+              <button>Sign In</button>
+            </div>
+          </Link>
         </div>
       </LoginPage1>
     </>

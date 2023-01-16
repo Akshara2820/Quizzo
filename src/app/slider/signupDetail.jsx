@@ -44,7 +44,7 @@ export default function SignupDetail() {
               forget it, then you have to do forgot password.
             </div>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 font-bold">
             <p className="">User Name</p>
             <input
               className="input"
@@ -54,7 +54,7 @@ export default function SignupDetail() {
               placeholder="enter your userName"
             />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 font-bold">
             <p>Password</p>
             <input
               className="input"
@@ -72,23 +72,23 @@ export default function SignupDetail() {
               )}
             </div>
           </div>
-          <div className="flex gap-2 items-center mt-4">
+          <div className="flex gap-2 items-center mt-4 font-bold">
             <input className="checkbox" type="checkbox" />
             <p>Remember me</p>
           </div>
 
-          <div className="flex items-center gap-2 mx-4">
+          <div className="flex items-center gap-2 mx-4 font-bold">
             <div className="my-6 h-[1px] bg-[#efefef] w-full"></div>
             <div className="font-bold"> or</div>
             <div className="my-6 h-[1px] bg-[#efefef] w-full"></div>
           </div>
-          <div className="googleButton">
+          <div className="googleButton ">
             <FcGoogle className="text-2xl" />
-            <button>Continue with Google</button>
+            <button className=" font-bold">Continue with Google</button>
           </div>
-          <div className="googleButton">
-            <BsGithub className="text-2xl" />
-            <button>Continue with Google</button>
+          <div className="googleButton ">
+            <BsGithub className="text-2xl " />
+            <button className="font-bold">Continue with GitHub</button>
           </div>
 
 
