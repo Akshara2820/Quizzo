@@ -130,7 +130,7 @@ function ForgotPage() {
                 <p className="text-[14px] text-center mt-2">
                   You have successfully reset and created a new password.
                 </p>
-                <Link href='/'>
+                <Link href='/home'>
                 <div className="sign-up">
                   <button>Go to Home</button>
                 </div>
@@ -148,6 +148,7 @@ function ForgotPage() {
 
 export default ForgotPage;
 const ForgotPage1 = styled.div`
+padding-bottom: 30px;
   .circle {
     background-color: var(--blueColor);
     padding: 40px 50px;

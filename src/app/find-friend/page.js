@@ -37,7 +37,7 @@ function FindFriends() {
 
   return (
     <FindFriends1>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 header">
         <Link href="/home">
           <div>
             <BsArrowLeft className="text-2xl" />
@@ -45,8 +45,8 @@ function FindFriends() {
         </Link>
         <div className="font-bold text-[20px]">Find Friends</div>
       </div>
-      <div className="mt-10">
-        <div className="absolute top-16 px-4 py-1 text-gray-400 mt-10">
+      <div className="">
+        <div className="absolute top-[62px] px-4 text-gray-400 mt-10">
           <FaSearch />
         </div>
         <input
@@ -109,13 +109,13 @@ function FindFriends() {
       </div>
       <div className="flex justify-between mt-10">
         <h1 className="text-[20px] font-bold">People you may know</h1>
-        <Link href='/discover'>
-        <div className="flex gap-4 items-center text-violet-700 text-[18px] font-bold">
-          <p>view all</p>
-          <p>
-            <BsArrowRight />
-          </p>
-        </div>
+        <Link href="/discover">
+          <div className="flex gap-4 items-center text-violet-700 text-[18px] font-bold">
+            <p>view all</p>
+            <p>
+              <BsArrowRight />
+            </p>
+          </div>
         </Link>
       </div>
 
@@ -146,7 +146,16 @@ function FindFriends() {
 
 export default FindFriends;
 const FindFriends1 = styled.div`
+  padding-bottom: 30px;
   .facebook-box {
     box-shadow: #cacfcc 0px 4px 0px;
+  }
+  padding-bottom: 60px;
+  .header {
+    padding: 1rem;
+    position: sticky;
+    top: 0px;
+    background: white;
+    z-index: 10;
   }
 `;

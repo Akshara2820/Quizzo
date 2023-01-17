@@ -114,6 +114,7 @@ export default function ProfileDetail() {
 }
 
 const LoginPage1 = styled.div`
+padding-bottom: 30px;
   .sign-up {
     background-color: var(--blueColor);
     box-shadow: #543acc 0px 5px 0px;

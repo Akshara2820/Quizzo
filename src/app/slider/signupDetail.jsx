@@ -119,7 +119,7 @@ export default function SignupDetail() {
                   <p className="text-[14px] text-center mt-2">
                     Please wait a moment, we are preparing for you...
                   </p>
-                  <Link href='/'><div className="sign-up">
+                  <Link href='/home'><div className="sign-up">
                     <button>Go to Home</button>
                   </div> </Link>
                 </div>
@@ -134,6 +134,7 @@ export default function SignupDetail() {
   );
 }
 const LoginPage1 = styled.div`
+padding-bottom: 30px;
 .googleButton {
     box-shadow: #efefef 0px 5px 1px;
     margin: 30px 20px 10px 20px;
@@ -184,7 +185,8 @@ const LoginPage1 = styled.div`
     box-shadow: #543acc 0px 5px 0px;
     margin: 20px 20px;
     border-radius: 50px;
-    padding: 10px;
+    padding: 10px ;
+    
     color: var(--whiteColor);
     text-align: center;
     font-weight: 600;

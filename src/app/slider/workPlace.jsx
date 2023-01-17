@@ -78,4 +78,6 @@ export default function WorkPlace() {
   );
 }
 
-const Root = styled.div``;
+const Root = styled.div`
+padding-bottom: 30px;
+`;

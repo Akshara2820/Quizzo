@@ -77,4 +77,6 @@ export default function TypeAccount() {
   );
 }
 
-const Root = styled.div``;
+const Root = styled.div`
+padding-bottom: 30px;
+`;

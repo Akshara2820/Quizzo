@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { CollectionData } from "../../../utils/data";
 import { BsArrowLeft } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
-import styled from "styled-components";
 import Link from "next/link";
-import DiscoverCard from "./card";
+import {HiOutlineArrowsUpDown} from 'react-icons/hi2'
+import styled from "styled-components";
+import TopicsCard from "./card";
 
 const Item = [
   {
@@ -81,35 +84,53 @@ const Item = [
   },
 ];
 
-function DiscoverItems() {
+function Topics() {
+  const query = useSearchParams();
+  const [data, setData] = useState({});
+
+  console.table(data);
+
+  useEffect(() => {
+    setData(CollectionData.filter((i) => i.id == query.get("id"))[0]);
+  }, [query]);
+
   return (
-    <DiscoverItems1>
+    <Topics1>
       <div className="flex justify-between items-center gap-4 header">
         <div className="flex items-center gap-6">
-          <Link href="/home">
+          <Link href="/collection">
             <div>
               <BsArrowLeft className="text-2xl" />
             </div>
           </Link>
-          <div className="font-bold text-[20px]">Discover</div>
+          <div className="font-bold text-[20px]">{data?.heading}</div>
         </div>
         <div>
           <FaSearch />
         </div>
       </div>
+      <img className="mt-6 rounded-2xl" src={data?.image} alt="sf" />
+      <div className="flex justify-between mt-4">
+        <h1 className="text-2xl font-bold">245 Quizzo</h1>
+        <div className="flex gap-2 items-center text-[#6949ff] font-semibold">
+          <p className="text-[18px]">Default</p>
+          <HiOutlineArrowsUpDown className="text-[18px]"/>
+        </div>
+      </div>
       <div>
         {Item.map((i) => {
-          return <DiscoverCard value={i} key={i.name} />;
+          return <TopicsCard value={i} key={i.name} />;
         })}
       </div>
-    </DiscoverItems1>
+
+      
+    </Topics1>
   );
 }
 
-export default DiscoverItems;
-const DiscoverItems1 = styled.div`
-  padding: 0px 0px 60px 0px;
-  padding-bottom: 60px;
+export default Topics;
+const Topics1 = styled.div`
+ padding-bottom: 60px;
   .header {
     padding: 1rem;
     position: sticky;
@@ -117,4 +138,4 @@ const DiscoverItems1 = styled.div`
     background: white;
     z-index: 10;
   }
-`;
+`
