@@ -92,7 +92,7 @@ export default function LoginPage() {
               Forgot Password?
             </div>
           </Link>
-          <Link href="/find-friend">
+          <Link href="/home">
             <div className="sign-up">
               <button>Sign In</button>
             </div>

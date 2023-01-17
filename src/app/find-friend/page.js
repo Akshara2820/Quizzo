@@ -1,17 +1,44 @@
-'use client'
-import React from "react";
-import { BsArrowLeft, BsChevronRight, BsFacebook,BsArrowRight } from "react-icons/bs";
+"use client";
+import React, { useState } from "react";
+import {
+  BsArrowLeft,
+  BsChevronRight,
+  BsFacebook,
+  BsArrowRight,
+} from "react-icons/bs";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { GiFeather } from "react-icons/gi";
 import { RiBook2Fill } from "react-icons/ri";
 import styled from "styled-components";
+import { useProgress } from "../../context/context";
+
+const Item = [
+  { image: "../assets/image2.jpg", name: "Maryland winkles", follow: "Follow" },
+  {
+    image: "../assets/image5.jpg",
+    name: "Lauralee Quintero",
+    follow: "Follow",
+  },
+  {
+    image: "../assets/image6.jpg",
+    name: "Alfonzo Schuessler",
+    follow: "Follow",
+  },
+  {
+    image: "../assets/image1.jpg",
+    name: "Akshara Mishra",
+    follow: "Follow",
+  },
+];
 
 function FindFriends() {
+  const { setSearch, search } = useProgress();
+
   return (
     <FindFriends1>
       <div className="flex items-center gap-4">
-        <Link href="/">
+        <Link href="/home">
           <div>
             <BsArrowLeft className="text-2xl" />
           </div>
@@ -26,6 +53,7 @@ function FindFriends() {
           className="bg-gray-200 p-4 rounded-md w-full px-10 outline-none"
           type="text"
           placeholder="Search email, name, or phone number"
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <div className="border facebook-box border-gray-300 mt-10 rounded-xl p-4 shadow-lg">
@@ -80,51 +108,45 @@ function FindFriends() {
         </div>
       </div>
       <div className="flex justify-between mt-10">
-        <h1 className="text-[20px] font-bold" >People you may know</h1>
+        <h1 className="text-[20px] font-bold">People you may know</h1>
+        <Link href='/discover'>
         <div className="flex gap-4 items-center text-violet-700 text-[18px] font-bold">
           <p>view all</p>
-          <p><BsArrowRight/></p>
+          <p>
+            <BsArrowRight />
+          </p>
         </div>
-      </div>
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex gap-4 items-center">
-          <img className="rounded-full w-14" src="../assets/image1.jpg" alt=""/>
-          <p className="font-bold text-[18px]">Darron Kulikowski</p>
-        </div>
-        <button className="bg-indigo-700 text-white px-3 py-1 text-[14px] rounded-full">Follow</button>
+        </Link>
       </div>
 
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex gap-4 items-center">
-          <img className="rounded-full w-14" src="../assets/image2.jpg" alt=""/>
-          <p className="font-bold text-[18px]">Maryland winkles</p>
-        </div>
-        <button className="bg-indigo-700 text-white px-3 py-1 text-[14px] rounded-full">Follow</button>
-      </div>
-
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex gap-4 items-center">
-          <img className="rounded-full w-14" src="../assets/image5.jpg" alt=""/>
-          <p className="font-bold text-[18px]">Lauralee Quintero</p>
-        </div>
-        <button className="bg-indigo-700 text-white px-3 py-1 text-[14px] rounded-full">Follow</button>
-      </div>
-
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex gap-4 items-center">
-          <img className="rounded-full w-14" src="../assets/image6.jpg" alt=""/>
-          <p className="font-bold text-[18px]">Alfonzo Schuessler</p>
-        </div>
-        <button className="bg-indigo-700 text-white px-3 py-1 text-[14px] rounded-full">Follow</button>
-      </div>
-
+      {Item.filter((i) => {
+        if (search === "") {
+          return i;
+        } else if (
+          i.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        ) {
+          return i;
+        }
+      }).map((i) => {
+        return (
+          <div className="flex justify-between items-center mt-4">
+            <div className="flex gap-4 items-center">
+              <img className="rounded-full w-14" src={i.image} alt="logo" />
+              <p className="font-bold text-[18px]">{i.name}</p>
+            </div>
+            <button className="bg-indigo-700 text-white px-3 py-1 text-[14px] rounded-full">
+              Follow
+            </button>
+          </div>
+        );
+      })}
     </FindFriends1>
   );
 }
 
 export default FindFriends;
 const FindFriends1 = styled.div`
-.facebook-box{
-  box-shadow:#cacfcc 0px 4px 0px;
-}
-`
+  .facebook-box {
+    box-shadow: #cacfcc 0px 4px 0px;
+  }
+`;
