@@ -59,7 +59,7 @@ export default function Authors() {
     <Root>
       <div className="flex justify-between items-center px-4">
         <div className="text-2xl font-bold">Top Authors</div>
-        <Link href='/image-collection'>
+        <Link href='/authors'>
 
         <div className="text-[#6949ff] flex items-center gap-3 text-xl font-semibold">
           <div>View all</div>

@@ -70,7 +70,7 @@ export default ImageCollection;
 const ImageCollection1 = styled.div`
   padding-bottom: 60px;
   .card-image {
-    width: 331px;
+    width: 350px;
     position: absolute;
     left: 0px;
     top: -3px;
