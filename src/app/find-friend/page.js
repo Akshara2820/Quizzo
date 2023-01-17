@@ -129,7 +129,7 @@ function FindFriends() {
         }
       }).map((i) => {
         return (
-          <div className="flex justify-between items-center mt-4">
+          <div key={i.name} className="flex justify-between items-center mt-4">
             <div className="flex gap-4 items-center">
               <img className="rounded-full w-14" src={i.image} alt="logo" />
               <p className="font-bold text-[18px]">{i.name}</p>
